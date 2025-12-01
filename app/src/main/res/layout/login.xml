@@ -5,7 +5,8 @@
     android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_cake_pattern">
+    android:background="@drawable/bg_cake_pattern"
+    tools:context=".LoginActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerContainer"
@@ -55,37 +56,41 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/formContainer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content" android:background="@drawable/bg_form_gradient"
+        android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="-50dp" android:background="@drawable/bg_form_gradient"
         android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="100dp" app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0"
-        >
+        app:layout_constraintTop_toBottomOf="@id/headerContainer"
+        app:layout_constraintVertical_bias="0">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_input_rounded1"
-            app:layout_constraintStart_toStartOf="parent"
+            app:hintEnabled="false"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:padding="8dp">
 
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/profile"
-                    android:layout_marginEnd="10dp" />
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="Username Icon"
+                    android:src="@drawable/profile" />
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etUsername"
@@ -95,7 +100,7 @@
                     android:background="@android:color/transparent"
                     android:hint="Username"
                     android:inputType="text"
-                    android:padding="12dp"/>
+                    android:padding="12dp" />
 
             </LinearLayout>
 
@@ -107,23 +112,25 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/bg_input_rounded1"
-            app:layout_constraintStart_toStartOf="parent"
+            app:hintEnabled="false"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textInputLayoutUsername">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:padding="8dp">
 
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/key"
-                    android:layout_marginEnd="10dp" />
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="Password Icon"
+                    android:src="@drawable/key" />
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPassword"
@@ -145,27 +152,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-11dp"
-            android:layout_marginEnd="0dp" android:text="Forgot Password?"
+            android:layout_marginEnd="0dp"
+            android:text="Forgot Password?"
             android:textAllCaps="false"
             android:textSize="13sp"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@id/textInputLayoutPassword" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutPassword" />
 
         <TextView
             android:id="@+id/buttonsignin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Sign In"
+            android:layout_marginTop="16dp"
             android:background="@drawable/tombollogin1"
-
-            android:textSize="22sp"
+            android:gravity="center"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Sign In"
             android:textColor="@android:color/white"
-
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/buttonForgotPassword" android:layout_marginTop="16dp" android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonForgotPassword" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

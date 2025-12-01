@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services' // <-- BARIS INI DITAMBAHKAN (untuk Google Services Plugin)
 }
 
 android {
@@ -30,9 +31,24 @@ android {
 
 dependencies {
 
+    // Dependensi yang sudah ada
     implementation 'androidx.appcompat:appcompat:1.7.1'
     implementation 'com.google.android.material:material:1.13.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+
+    // --- PENAMBAHAN UNTUK FIREBASE SSO ---
+
+    // 1. Import Firebase Bill of Materials (BoM) untuk manajemen versi
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0")) // <-- BARIS INI DITAMBAHKAN
+
+    // 2. Dependensi untuk Firebase Authentication
+    implementation 'com.google.firebase:firebase-auth' // <-- BARIS INI DITAMBAHKAN
+
+    // 3. Dependensi untuk Google Sign-In (Diperlukan untuk SSO via Google)
+    implementation 'com.google.android.gms:play-services-auth:20.7.0' // <-- BARIS INI DITAMBAHKAN
+
+    // --- AKHIR PENAMBAHAN ---
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.3.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
